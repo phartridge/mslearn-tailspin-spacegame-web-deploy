@@ -64,6 +64,13 @@ stages:
 
     - publish: '$(Build.ArtifactStagingDirectory)'
       artifact: drop
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          # Write your PowerShell commands here.
+          
+          Write-Host "Hello World"
 
 - stage: 'Deploy'
   displayName: 'Deploy the web application'
